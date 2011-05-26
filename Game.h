@@ -6,9 +6,8 @@ class CGame
    Q_OBJECT
 
 public:
-    CGame();
-    ~CGame();
-
+   CGame();
+   ~CGame();
 
 };
 

@@ -1,26 +1,32 @@
 #ifndef FLEET_H
 #define FLEET_H
 
+#include "Planet.h"
+
 class CFleet
 {
 public:
    CFleet();
    ~CFleet();
 
-   void SetPercent(const unsigned short) const;
+   void SetPercent(const unsigned short);
    void GetPosition (unsigned short&, unsigned short&) const;
 
 private:
+   struct Point
+   {
+      unsigned int x;
+      unsigned int y;
+   };
 
    void updatePosition();
 
-   unsigned short m_idFrom;
-   unsigned short m_idTo;
+   unsigned short m_id;
    unsigned short m_size;
    unsigned short m_percentPassed;
-   unsigned short m_realX;
-   unsigned short m_realY;
-
+   Point m_from;
+   Point m_to;
+   Point m_actualPosition;
 };
 
 #endif // FLEET_H
