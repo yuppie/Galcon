@@ -2,6 +2,7 @@
 #define FLEET_H
 
 #include "Planet.h"
+#include "Player.h"
 
 class CFleet
 {
@@ -22,7 +23,8 @@ private:
    void updatePosition();
 
    unsigned short m_id;
-   unsigned short m_size;
+   CPlayer* m_player;
+   unsigned short m_number;
    unsigned short m_percentPassed;
    Point m_from;
    Point m_to;
