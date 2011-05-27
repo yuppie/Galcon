@@ -10,8 +10,11 @@ public:
    CFleet();
    ~CFleet();
 
-   void SetPercent(const unsigned short);
-   void GetPosition (unsigned short&, unsigned short&) const;
+   void SetPercent(double); //For synhronization with server
+
+   void IncreaseProcent(double); //For simulation
+
+   void GetPosition (unsigned short&, unsigned short&) const;  //Output into GUI
 
 private:
    struct Point
@@ -22,13 +25,16 @@ private:
 
    void updatePosition();
 
-   unsigned short m_id;
-   CPlayer* m_player;
-   unsigned short m_number;
-   unsigned short m_percentPassed;
    Point m_from;
    Point m_to;
-   Point m_actualPosition;
+   CPlayer* m_player;
+   bool m_reached;
+   unsigned short m_id;
+   unsigned short m_number;
+
+   double m_percentPassed;
+   double m_actualX;
+   double m_actualY;
 };
 
 #endif // FLEET_H

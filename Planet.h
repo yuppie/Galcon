@@ -7,6 +7,7 @@ class CPlanet
 public:
    CPlanet();
    ~CPlanet();
+   const double EPS = 0.5;
 
    unsigned long GetArmy () const;
    unsigned int GetPlayer () const;
@@ -21,7 +22,7 @@ private:
    unsigned short m_x;
    unsigned short m_y;
    unsigned short m_radius;
-   unsigned long m_army;
+   double m_army;
    CPlayer* m_player;
 };
 

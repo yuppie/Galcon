@@ -1,4 +1,7 @@
+#include <math.h>
+
 #include "Planet.h"
+
 
 CPlanet::CPlanet()
 {
@@ -6,17 +9,20 @@ CPlanet::CPlanet()
 
 unsigned long CPlanet::GetArmy() const
 {
-   return this->m_army;
+   return floor(m_army);
 }
 
 unsigned int CPlanet::GetPlayer() const
 {
-   return this->m_player;
+   return this->m_player->GetId();
 }
 
 void CPlanet::SetArmy(const unsigned int i_nArmy)
 {
-   m_army = i_nArmy;
+   if ((m_army - i_nArmy) > EPS)
+   {
+      m_army = i_nArmy;
+   }
 }
 
 void CPlanet::SetPlayer(const unsigned int i_nPlayer)

@@ -1,6 +1,8 @@
 #ifndef CGAME_H
 #define CGAME_H
 
+typedef int IMessage;
+
 class CGame
 {
    Q_OBJECT
@@ -8,7 +10,9 @@ class CGame
 public:
    CGame();
    ~CGame();
-
+   void SlotStartData(IMessage*);
+   void SlotStateMap(IMessage*);
+   void SlotFinishGame(IMessage*);
 };
 
 #endif // CGAME_H
